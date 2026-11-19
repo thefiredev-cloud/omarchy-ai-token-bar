@@ -2,6 +2,12 @@
 
 Two Omarchy bar widgets that count AI tokens. One reads the logs of Claude Code, Codex CLI, Grok CLI, OMP and Hermes on your machine. The other reads the output of a local model cluster that you run.
 
+## Hardware and on-prem
+
+- It runs on the Linux desktop where your agents run. No GPU, no server and no extra RAM beyond a small Python process once a minute.
+- Nothing leaves the machine. The scripts open no network connection, need no API key and read only local logs, local databases and your own telemetry files. The one outside process is `omp stats --summary`, which AI Tokens starts to refresh the OMP database.
+- Cluster Tokens is for people who serve open models on their own hardware. It shows tokens served and whether the engine is up, from per-minute samples that your own job writes. This repo does not include that job.
+
 ## How it works
 
 ```mermaid
