@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "meshvault.ai-tokens",
+  "name": "AI Tokens",
+  "version": "1.0.0",
+  "author": "Tanner Osterkamp",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "Tokens used per provider (Anthropic, Codex, Grok) in the bar, counted from local logs: Claude Code, Codex CLI, Grok CLI, OMP and Hermes. No network calls and no keys.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "AI Tokens",
+    "description": "Three chips (CLD, CDX, GRK) with tokens used today. Click to switch between today, 7 days, 30 days and all time. Hover for the split by source.",
+    "category": "AI",
+    "allowMultiple": false,
+    "defaultSection": "left"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "meshvault.cluster-tokens",
+  "name": "Cluster Tokens",
+  "version": "1.0.0",
+  "author": "Tanner Osterkamp",
+  "license": "SEE LICENSE IN LICENSE",
+  "description": "Tokens served by the local open-source cluster (one model) in the bar, summed from the once-a-minute cluster-telemetry samples. No network calls and no keys.",
+  "kinds": ["bar-widget"],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Cluster Tokens",
+    "description": "One chip (OSS) with tokens the cluster served today and a dot for engine up or down. Click to switch between today, 7 days, 30 days and all time.",
+    "category": "AI",
+    "allowMultiple": false,
+    "defaultSection": "left"
+  }
+}
