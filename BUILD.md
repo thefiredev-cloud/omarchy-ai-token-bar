@@ -111,6 +111,6 @@ install.sh                       copy, validate, enable and pin both widgets
 pin_left.py                      edit bar order in shell.json
 plugins/meshvault.ai-tokens/     BarWidget.qml  ai_tokens.py  manifest.json
 plugins/meshvault.cluster-tokens/  BarWidget.qml  cluster_tokens.py  manifest.json
-tests/                           test_ai_tokens.py  test_cluster_tokens.py
+tests/                           test_ai_tokens.py  test_cluster_tokens.py  test_pin_left.py
 docs/architecture.svg            architecture diagram
 ```
