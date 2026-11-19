@@ -39,7 +39,7 @@ Python 3 standard library for the scripts. QML for the widgets, using the `Widge
 ```bash
 git clone https://github.com/thefiredev-cloud/omarchy-ai-token-bar.git
 cd omarchy-ai-token-bar
-python3 -m unittest discover -s tests -v    # 33 tests, standard library only
+python3 -m unittest discover -s tests -v    # 38 tests, standard library only
 ./install.sh                                 # needs a running Omarchy shell
 ```
 
