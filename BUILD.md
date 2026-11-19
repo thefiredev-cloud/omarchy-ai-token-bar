@@ -65,8 +65,8 @@ Databases open read-only. A missing source shows under "Unavailable" in the hove
 The script reads `*.jsonl` files from the top level of the telemetry directory and adds the per-sample changes into a per-day ledger. This repo does not include the producer. Your own job writes one JSON object per line with these fields:
 
 - `ts`: ISO 8601 timestamp. Lines not newer than the previous line in the same file are ignored.
-- `d_prompt_tokens`, `d_generation_tokens`, `d_requests_total`: the change since the previous sample. If `d_requests_total` is blank, `completed` is used. With neither, the period `requests` is `null` and the hover text says "requests n/a".
-- `engine_up`, `served_model`, `max_model_len`, `running`, `waiting`, `kv_usage`, `decode_tps_per_req`, `error`: optional status shown in the hover text.
+- `d_prompt_tokens`, `d_generation_tokens`, `d_requests_total`: the change since the previous sample. If `d_requests_total` is blank, `completed` is used. With neither, the period `requests` is `null` and the hover text says "requests n/a". A period that has both counted and uncounted samples reports the sum as a lower bound, and the hover text says "at least N requests".
+- `engine_up`, `served_model`, `running`, `waiting`, `kv_usage`, `decode_tps_per_req`, `error`: optional status shown in the hover text. `max_model_len` is carried in the JSON only; the widget does not draw it.
 
 An optional `last.json` with `raw.created` (epoch seconds) in the same folder gives the engine uptime. The dot reads as down when the newest sample says so or is more than 180 seconds old.
 
