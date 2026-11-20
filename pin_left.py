@@ -42,11 +42,10 @@ def main():
     args = parser.parse_args()
     path = Path(args.shell_json)
     config = json.loads(path.read_text(encoding="utf-8"))
-    layout = config["bar"]["layout"]
-    # Snapshot before plan() runs: it sets barRow on the same entry objects.
-    before = [(e["id"], e.get("barRow")) for e in layout["left"]]
-    layout["left"] = plan(layout)
-    after = [(e["id"], e.get("barRow")) for e in layout["left"]]
+    new_left = plan(config["bar"]["layout"])
+    before = [(e["id"], e.get("barRow")) for e in config["bar"]["layout"]["left"]]
+    config["bar"]["layout"]["left"] = new_left
+    after = [(e["id"], e.get("barRow")) for e in new_left]
     print("left:", after)
     if args.dry_run:
         return 0
